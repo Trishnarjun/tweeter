@@ -1,0 +1,50 @@
+.topTweet  {
+  display: flex;
+  justify-content: space-between;
+}
+.topTweet div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topTweet i {
+  font-size: 30px;
+
+}
+article > div  {
+  font-weight: 600;
+}
+article {
+  border: 5px solid;
+  margin-top: 70px;
+  padding: 0px 20px 0px;
+  transition: box-shadow .5s;
+  
+}
+article:hover {
+  box-shadow: 7px 7px #96b2d6;
+}
+
+.bottomTweet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 15px 0px;
+  border-top: 5px solid;
+
+
+}
+.bottomTweet p {
+  font-size: .7em;
+}
+
+.interaction {
+  display: flex;
+  font-size: .7em;
+  height: 30px;
+  gap: 10px;
+}
+
+.interaction > i:hover {
+  color: orange;
+}
