@@ -5,10 +5,11 @@
 .topTweet div {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
-.topTweet i {
-  font-size: 30px;
+.topTweet img {
+  width: 20%;
+  height: auto;
 
 }
 article > div  {
