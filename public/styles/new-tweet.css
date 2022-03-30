@@ -23,6 +23,7 @@ form > div {
   width: 100%;
   font-family: Source Sans Pro;
   font-weight: 600;
+  padding-top: 70px;
 }
 textarea {
   resize: none;
@@ -33,6 +34,20 @@ textarea {
   height: 2em;
   margin-bottom: 0.5em;
   font-family: Source Sans Pro;
-  font-weight: 600;
+  font-weight: 300;
+  margin-top: 10px;
+  font-size: .8em;
   color: #545149;
+}
+
+#msg {
+  border: 5px solid red;
+  color: red;
+  padding: 20px 10px 20px;
+  font-size: 1em;
+  margin-bottom: 70px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }

@@ -32,16 +32,18 @@ const data = [
 const renderTweets = function() {
   // loops through tweets
   $(() => {
-    //$('.allTweets').append($tweet);
+    $("#msg").hide();
     $(".container form").on("submit", function(event) {
       event.preventDefault();
       const inputText = $("#tweet-text").val();
+      const safeText = escape(inputText)
+      console.log(safeText)
       if (inputText === "") {
         alert("please enter something")
       } else if (inputText.length > 140) {
-        alert("please enter less the 140 chr")
+        $("#msg").slideDown(300);
       } else {
-        
+        $("#msg").slideUp(200);
         $.ajax({
           type: "POST",
           url: "/tweets",
@@ -52,12 +54,17 @@ const renderTweets = function() {
         });
       }
     })
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
     const loadTweets = () => {
       $.get("/tweets").then( function(data){
         console.log(data)
         for (let tweet of data) {
           let $tweet = createTweetElement(tweet);
-          $('.allTweets').prepend($tweet)
+          $('.allTweets').prepend($tweet).slideDown()
         }
       })
     }
@@ -69,6 +76,7 @@ const renderTweets = function() {
 }
 
 const createTweetElement = (data) => {
+  
   let newTweet = `<article>
   <header class="topTweet">
     <div>
@@ -78,7 +86,7 @@ const createTweetElement = (data) => {
     <p>${data.user.handle}</p>
   </header>
   <div>
-    <p>${data.content.text}</p>
+    <p>${escape(data.content.text)}</p>
   </div>
   <footer class="bottomTweet">  
     <p>${timeago.format(data.created_at)} </p>
