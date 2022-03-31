@@ -33,11 +33,14 @@ const renderTweets = function() {
   // loops through tweets
   $(() => {
     $("#msg").hide();
+    
+    //post requests tweet to /tweets
     $(".container form").on("submit", function(event) {
       event.preventDefault();
       const inputText = $("#tweet-text").val();
       const safeText = escape(inputText)
-      console.log(safeText)
+      
+      //checks for errors in the input
       if (inputText === "") {
         alert("please enter something")
       } else if (inputText.length > 140) {
@@ -51,32 +54,35 @@ const renderTweets = function() {
         }).done(function() {
           console.log("success")
           loadTweets()
+          window.location.reload();
         });
       }
+      
     })
+    //cross scriping for unsafe code
     const escape = function (str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
+      //console.log(div.innerHTML)
       return div.innerHTML;
     };
     const loadTweets = () => {
       $.get("/tweets").then( function(data){
         console.log(data)
         for (let tweet of data) {
+          // calls createTweetElement for each tweet
           let $tweet = createTweetElement(tweet);
+          // takes return value and appends it to the tweets container
           $('.allTweets').prepend($tweet).slideDown()
         }
       })
     }
     loadTweets()
   });
-  
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
 }
 
 const createTweetElement = (data) => {
-  
+  // adding dynamic elements to the tweet
   let newTweet = `<article>
   <header class="topTweet">
     <div>
@@ -86,7 +92,7 @@ const createTweetElement = (data) => {
     <p>${data.user.handle}</p>
   </header>
   <div>
-    <p>${escape(data.content.text)}</p>
+    <p>${escape(data.content.text).split('%20').join(' ').split('%21').join('!').split('%2C').join(',').split('%26').join('&')}</p>
   </div>
   <footer class="bottomTweet">  
     <p>${timeago.format(data.created_at)} </p>

@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -32,39 +33,42 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>TWEETER</span>
+      <span>TWEETER </span>
       <div>
         <h3>Write a new tweet</h3>
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-    <header>
-      <div>
+    </div>
+    <div class="pageContainer">
+      <div class="profileStyle">
+        <header>
           <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
+          <br>
           <h2>Trishnarjun Kunamalla</h2>
+        </header> 
       </div>
-  </header>  
-  <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div id="msg">
-          <i class="fa-solid fa-triangle-exclamation"></i>Too long. Exceeded character limit of 140. <i class="fa-solid fa-triangle-exclamation"></i>
-        </div>
-        <form>
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <section class="allTweets">
-  
-      </section>
-    </main>
+      <div class="mainStyle">
+        <!-- Page-specific (main) content here -->
+        <main class="container">
+          <section class="new-tweet">
+            <div id="msg">
+              <i class="fa-solid fa-triangle-exclamation"></i>Too long. Exceeded character limit of 140. <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <form>
+              <label for="tweet-text">What are you humming about?</label>
+              <textarea name="text" id="tweet-text"></textarea>
+              <div>
+                <button type="submit">Tweet</button>
+                <output name="counter" class="counter" for="tweet-text">140</output>
+              </div>
+            </form>
+          </section>
+          <section class="allTweets">
+            <!-- section for all the tweets -->
+          </section>
+        </main>
+      </div>
+    </div>
   </body>
 </html>

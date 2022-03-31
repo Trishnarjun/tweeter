@@ -1,10 +1,33 @@
-body > header {
+.profileStyle {
   height: 500px;
-  padding-top: 50px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   color: aliceblue;
   background-color: #dba210;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+}
+@media only screen and (min-width: 1024px) {
+  .pageContainer {
+    display: flex;
+    width: 100%;
+  }
+  
+  .mainStyle {
+    margin: 70px 0% 0% 12%;
+    width: 100%;
+  }
+  header {
+    width: 100%;
+  }
+
+
+  .profileStyle {
+    padding: 0px 10% 0px;
+    margin: 150px 0em 0px 2.5em;
+  }
+  
+
 }
