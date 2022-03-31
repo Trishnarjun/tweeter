@@ -12,6 +12,11 @@ This repository is the starter code for the project: Students will fork and clon
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
+## Screenshots
+
+!["deskstop site of showing error when characters are too long"](https://github.com/Trishnarjun/tweeter/blob/master/docs/desktop-tweet-too-long.png)
+!["mobile site of showing tweets box"](https://github.com/Trishnarjun/tweeter/blob/master/docs/tweet-box.png)
+
 ## Dependencies
 
 - Express
