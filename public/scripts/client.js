@@ -52,7 +52,6 @@ const renderTweets = function() {
           url: "/tweets",
           data: $(this).serialize()
         }).done(function() {
-          console.log("success")
           loadTweets()
           window.location.reload();
         });
@@ -63,12 +62,10 @@ const renderTweets = function() {
     const escape = function (str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
-      //console.log(div.innerHTML)
       return div.innerHTML;
     };
     const loadTweets = () => {
       $.get("/tweets").then( function(data){
-        console.log(data)
         for (let tweet of data) {
           // calls createTweetElement for each tweet
           let $tweet = createTweetElement(tweet);
