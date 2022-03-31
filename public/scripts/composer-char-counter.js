@@ -1,5 +1,5 @@
 
-
+//counts characters and updates characters left
 $(document).ready(function() {
   let counter = 0;
   let remainingChar;
